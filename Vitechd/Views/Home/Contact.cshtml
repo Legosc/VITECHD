@@ -1,0 +1,52 @@
+﻿@using Vitechd.Models
+@model MailModels
+@{
+    ViewBag.Title = "Contacto";
+}
+<div class="card">
+    <div class="card-content row">
+        <div class="col s12">
+            <h3>@ViewBag.Title.</h3>
+            <h4>@ViewBag.Message</h4>
+        </div>
+        <div class="col m6">
+
+            @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_circle</i>
+                        @Html.TextBoxFor(m => m.Name, new { @Class = "validate", @type = "text", @id = "Name" })
+                        @Html.LabelFor(m => m.Name, new { @for = "Name" })
+
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">phone</i>
+                        @Html.TextBoxFor(m => m.Telephone, new { @Class = "validate", @type = "text", @id = "Telephone" })
+                        @Html.LabelFor(m => m.Telephone, new { @for = "Telephone" })
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        @Html.TextBoxFor(m => m.Email, new { @Class = "validate", @type = "text", @id = "Email" })
+                        @Html.LabelFor(m => m.Email, new { @for = "Email" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">message</i>
+                        @Html.TextAreaFor(m => m.Message, new { @Class = "materialize-textarea", @type = "text", @id = "Message" })
+                        @Html.LabelFor(m => m.Message, new { @for = "Message" })
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            }
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

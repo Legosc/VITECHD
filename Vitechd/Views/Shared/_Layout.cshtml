@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="~/manifest.json">
+    <title>@ViewBag.Title - VITECHD</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" href="~/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md box-shadow">
+            <a href="/" class="navbar-brand"><img class="responsive-img" id="logo" src="~/Images/logo-01.png" /></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        @Html.ActionLink("Inicio", "Index", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Portafolio", "About", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contáctenos", "Contact", "Home", null, new { @class = "nav-link" })
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-2 my-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Ingresar</a>
+                    </li>
+                </ul>
+                    
+</div>
+        </nav>
+        
+    </header>
+    <main>
+
+        @RenderBody()
+    </main>
+    <footer class="page-footer">
+        <div class="container-fluid">
+           
+        </div>
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                <p>VITECHD &copy; @DateTime.Now.Year - Costa Rica</p>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
