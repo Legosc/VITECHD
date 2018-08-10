@@ -25,9 +25,9 @@ namespace Vitechd
                       "~/Scripts/site.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-grid.css",
-                      "~/Content/bootstrap-reboot.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/bootstrap-grid.min.css",
+                      "~/Content/bootstrap-reboot.min.css",
                       "~/Content/Site.css"));
         }
     }

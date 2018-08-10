@@ -9,17 +9,31 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" href="~/logo.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56545130-1"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-56545130-1');
+    </script>
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 
 <body>
     <header>
+
         <nav class="navbar navbar-expand-md box-shadow">
             <a href="/" class="navbar-brand"><img class="responsive-img" id="logo" src="~/Images/logo-01.png" /></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                
+                <i class="material-icons">
+                    view_headline
+                </i>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarsExample04">
